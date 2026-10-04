@@ -1,4 +1,4 @@
-- Point the MILES runtime and planning schema at the fresh `allenai/miles-olmo-core` repository, retaining Qwen OPD compatibility and removing options for omitted DeepSeek components (https://github.com/allenai/open-instruct/pull/1924).
+- Point the MILES runtime and planning schema at the fresh `allenai/miles-olmo-core` repository and its single-commit release history, retaining Qwen OPD compatibility and removing options for omitted DeepSeek components (https://github.com/allenai/open-instruct/pull/1924).
 # Changelog
 
 All notable changes to this project will be documented in this file.
