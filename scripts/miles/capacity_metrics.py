@@ -1,7 +1,8 @@
-"""Reconstruct capacity metrics from completed runs; no training or W&B dependency.
-
-Phase rates and full-cycle useful rates have deliberately different names.
-Hardware observations include coverage; unavailable values are never zero-filled.
+"""Combine retained run timelines, trainer records and GPU samples into capacity
+measurements for comparing training and inference allocations. Phase rates and
+useful throughput over the full cycle are reported separately so overlap and idle
+time remain visible. Hardware measurements include their coverage, and missing
+observations stay unknown rather than becoming zero utilization.
 """
 
 import json

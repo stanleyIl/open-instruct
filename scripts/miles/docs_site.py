@@ -1,4 +1,8 @@
-"""Keep repository-relative MILES links useful in both GitHub Markdown and MkDocs."""
+"""Adapt repository-relative MILES documentation links for the generated MkDocs site.
+The hooks generate virtual configuration-reference pages and redirect links to
+repository files, such as example configurations, to their GitHub locations. This
+keeps the same Markdown sources useful both on GitHub and in the built documentation.
+"""
 
 import os
 import re

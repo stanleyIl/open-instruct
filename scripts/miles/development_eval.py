@@ -1,7 +1,8 @@
-"""Score saved math/GSM8K development responses in the pinned olmo-eval environment.
-
-Copy this module into custom evaluator bundles. Gold labels may be a scalar or
-a flat list of acceptable answers; malformed labels are errors, never zero rewards.
+"""Score saved GSM8K and math development responses inside an olmo-eval bundle.
+The scorer accepts scalar gold labels or a flat list of acceptable answers, using
+exact decimal comparison for GSM8K and the evaluator's math grading for math tasks.
+It is self-contained so bundles can copy it without installing Open Instruct;
+malformed labels raise errors rather than silently receiving zero reward.
 """
 
 import re

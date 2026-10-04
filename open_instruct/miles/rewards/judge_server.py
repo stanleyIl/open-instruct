@@ -1,4 +1,9 @@
-"""Compile the qualified packed SGLang judge service from prepared immutable weights."""
+"""Build the SGLang command for a managed judge from its prepared model artifacts.
+Before launch it checks the requested model revision, chat-template digest and
+context settings against the preparation receipt. This keeps judge serving tied to
+the qualified weights and chat template, including any explicitly supported
+context extension, while the cluster supervisor owns the process lifetime.
+"""
 
 import hashlib
 import json

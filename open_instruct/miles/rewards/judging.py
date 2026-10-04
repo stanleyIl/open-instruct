@@ -1,4 +1,9 @@
-"""Named services and rubric bindings, following the Megatron implementation's run-file contract."""
+"""Validate judge services and their named rubric bindings in a researcher run file.
+The configuration separates managed services, which consume GPUs in the allocation,
+from external endpoints and describes how dataset verifier names use each service.
+It produces the registry consumed by preparation and reward workers so those stages
+agree on model identity, rubric and request limits.
+"""
 
 import copy
 import re

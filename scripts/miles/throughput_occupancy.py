@@ -1,4 +1,9 @@
-"""Time-weighted summaries of sampled pipeline occupancy, with explicit coverage."""
+"""Summarize sampled pipeline and hardware occupancy over measured time windows.
+The helpers align observations with replica roles and compute time-weighted values
+with explicit coverage, allowing throughput reports to distinguish observed idle
+time from gaps in sampling. They consume retained records and do not require a
+running training job.
+"""
 
 import json
 import math

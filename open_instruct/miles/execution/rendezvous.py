@@ -1,4 +1,9 @@
-"""Allocate fresh coordination state for each complete replica attempt."""
+"""Give every complete replica restart a fresh shared coordination directory.
+Replicas register unique process identities under a filesystem lock, and a new
+round is released only after all members have changed. This prevents restarted
+processes from consuming readiness or failure files left by an earlier attempt
+while they wait for their peers to rejoin.
+"""
 
 import fcntl
 import json

@@ -1,4 +1,9 @@
-"""Submit a structured run file through the committed-image build wrapper."""
+"""Submit the run file once the committed-image wrapper has selected its image.
+This small command-line bridge loads the configuration and overrides, then either
+renders the Beaker specification for inspection or passes it to the launch module.
+Keeping image construction outside this step allows the same submission code to
+use a newly built image or an explicitly reused one.
+"""
 
 import argparse
 import json

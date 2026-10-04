@@ -1,7 +1,8 @@
-"""CPU-safe encoding using a snapshot of the pinned MILES/SGLang argparse contract.
-
-Regenerate with scripts/miles/snapshot_options.py inside the pinned runtime.
-Parser support does not establish that a particular backend implements an option.
+"""Encode native MILES and SGLang options using a snapshot of their argument parsers.
+This lets planning validate option names, types and command-line encoding without
+installing the GPU stack. Regenerate the snapshot with scripts/miles/snapshot_options.py
+inside the pinned runtime; parser support alone does not establish that a selected
+backend implements an option.
 """
 
 import argparse

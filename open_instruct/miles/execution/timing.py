@@ -1,4 +1,9 @@
-"""Awaited driver stage timings; async generation wait excludes producer overlap."""
+"""Record how long the driver spends awaiting each stage of a training run.
+The JSONL timeline includes stage identity, rollout number and success or failure,
+allowing offline tools to separate initialization, generation wait, training and
+publication costs. For asynchronous runs these are driver wait times, so generation
+work that overlaps training is not counted again as generation wait.
+"""
 
 import json
 import time

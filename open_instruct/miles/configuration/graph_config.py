@@ -1,7 +1,8 @@
-"""Resolve explicit SGLang graph settings for CPU-side checks, without defaults.
-
+"""Resolve explicitly requested SGLang CUDA-graph settings for planning checks.
 The pinned parser gives JSON overrides precedence over convenience flags, which
-in turn override legacy disable switches. Model-dependent defaults stay unknown.
+in turn override legacy disable switches. Reproducing that order lets CPU-side
+validation reason about graph coverage while leaving model-dependent defaults
+unresolved until the serving runtime chooses them.
 """
 
 import json

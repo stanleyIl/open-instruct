@@ -1,4 +1,9 @@
-"""Supply application checkpoint identity to the MILES recorder."""
+"""Connect MILES inference records to the model source prepared by this workflow.
+The recorder receives a stable identity derived from the starting checkpoint's
+file inventory, so separate runs prepared from the same source can share evidence
+for prompt selection. The identity records its basis explicitly: it describes an
+inventory rather than a hash of every weight tensor.
+"""
 
 import json
 from pathlib import Path

@@ -1,4 +1,9 @@
-"""Lightweight settings and HTTP sessions shared by external reward services."""
+"""Share setting parsing and reusable HTTP sessions between external reward clients.
+These helpers give code execution and language-model judges consistent precedence
+for explicit arguments and environment values, and construct connection pools with
+caller-selected retry behavior. They keep service plumbing separate from each
+verifier's prompt construction and scoring rules.
+"""
 
 import functools
 import math

@@ -1,4 +1,8 @@
-"""Capture native help in the pinned image; does not change the parser contract.
+"""Capture descriptions from the native MILES and SGLang parsers in a pinned image.
+The generated help metadata feeds the CPU-side option reference, keeping it aligned
+with the installed runtime while leaving the parser contract unchanged. Run it
+inside the pinned runtime and supply the image identity so the capture records
+which installation provided the descriptions.
 
 python -m scripts.miles.capture_option_help --image IMAGE_ID --output runs/native-help.json
 """

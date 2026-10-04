@@ -1,4 +1,9 @@
-"""Build the Core RL source overlay on the exact runtime recorded in the lock."""
+"""Build the MILES runtime or application image against the checked-in runtime lock.
+The command verifies the local base-image identity, supplies authenticated source
+access through a BuildKit secret when needed, and records the application revision
+in the build arguments. The committed-image launcher uses this to package Open
+Instruct with its separately pinned GPU dependencies.
+"""
 
 import argparse
 import json

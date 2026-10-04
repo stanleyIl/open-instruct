@@ -1,4 +1,9 @@
-"""Exercise real code-verifier HTTP retries through a private loopback fault proxy."""
+"""Check the code reward client's retry and failure handling against a live service.
+A private loopback proxy injects transient HTTP failures locally and forwards only
+healthy canary requests to the upstream verifier. The resulting report verifies
+that retries recover when possible and that exhausted failures follow the selected
+policy without injecting faults into the shared service itself.
+"""
 
 import argparse
 import asyncio

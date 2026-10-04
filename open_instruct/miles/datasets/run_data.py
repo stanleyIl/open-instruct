@@ -1,4 +1,10 @@
-"""Immutable researcher-run data preparation, independent of sibling repositories."""
+"""Prepare the fixed training and held-out inputs consumed by a MILES run. Named
+tasks, existing JSONL datasets or an adopted manifest are turned into rendered
+prompts with verifier targets, a reward registry and a provenance manifest. The
+preparation checks prompt lengths, reward metadata and overlap by rendered prompt
+or sample ID, then records input and output hashes so a resumed run reuses the
+same data instead of silently resampling or accepting changed files.
+"""
 
 import copy
 import hashlib

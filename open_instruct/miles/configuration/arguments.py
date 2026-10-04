@@ -1,4 +1,8 @@
-"""Parse shared MILES optimizer settings and explicit Core backend options."""
+"""Attach Core training options to the native MILES argument parser. The runtime
+uses this bridge to share MILES optimizer and rollout settings while selecting the
+Core backend and validating its additional controls. This module runs inside the
+pinned runtime; CPU-side planning uses the configuration classes and parser snapshot.
+"""
 
 import json
 import sys

@@ -1,4 +1,9 @@
-"""Execute the researcher run file without importing the GPU runtime on submission."""
+"""Execute the preparation, training and export stages described by a run file.
+The workflow prepares model and data artifacts, records their identities and tracks
+attempts so recovery can reuse compatible outputs and reject changed inputs. GPU
+runtime parsing and training are deferred until execution, keeping the same run
+specification usable for planning and submission on a CPU-only machine.
+"""
 
 import asyncio
 import copy

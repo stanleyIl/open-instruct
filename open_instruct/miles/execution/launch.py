@@ -1,4 +1,9 @@
-"""Beaker submission and receipts for committed researcher run files."""
+"""Translate a validated run into a Beaker experiment and retain its launch receipt.
+The specification carries GPU placement, replica coordination, mounts and scheduling
+settings into the job; submission records the experiment identity for later queries.
+Status reads the newest attempt for each task and replica, and result collection
+retains small run artifacts so users can inspect progress and failures after exit.
+"""
 
 import base64
 import json

@@ -1,4 +1,9 @@
-"""Strict named reward routing shared by the driver and remote reward workers."""
+"""Resolve named judge rewards to explicitly configured services and rubrics.
+Prepared samples refer to verifier names; this registry binds those names to the
+approved model, endpoint and prompt contract shared by the driver and reward workers.
+It also validates dataset references and probes known-answer contrasts so a run can
+check its judge setup before relying on the resulting rewards.
+"""
 
 import asyncio
 import dataclasses

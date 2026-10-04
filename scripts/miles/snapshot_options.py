@@ -1,4 +1,7 @@
-"""Write the CPU planning schema using the installed, pinned MILES/SGLang runtime.
+"""Snapshot the installed MILES and SGLang argument parsers for CPU-side planning.
+The output records option types, defaults and encoding rules used to validate and
+compile run files without importing those parsers on the submission host. Run this
+inside the pinned runtime and review the generated schema when updating its pins.
 
 Usage inside the runtime: python scripts/miles/snapshot_options.py /tmp/options.json
 Review the diff and copy to open_instruct/miles/configuration/options.json when updating pins.

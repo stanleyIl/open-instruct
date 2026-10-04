@@ -1,4 +1,9 @@
-"""Lightweight task verifiers shared with dataset preparation."""
+"""Provide lightweight reward adapters for prepared task datasets. Multiplication
+and answer-format checks run locally, while the instruction-following adapter
+translates manifest targets into Open Instruct's existing verifier format. Shared
+answer normalization and deferred grading imports let data preparation validate
+these targets without loading the full math and NLP dependency stack.
+"""
 
 import ast
 import dataclasses

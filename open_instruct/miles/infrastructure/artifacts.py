@@ -1,4 +1,8 @@
-"""Atomic application receipts, independent of the training runtime."""
+"""Publish JSON receipts and state files without exposing partially written output.
+Writers serialize into a unique temporary file beside the destination and replace
+it atomically, cleaning up the temporary file on failure. Launch, preparation and
+evaluation can share this helper without depending on the training runtime.
+"""
 
 import json
 import os

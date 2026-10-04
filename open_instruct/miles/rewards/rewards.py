@@ -1,4 +1,8 @@
-"""MILES custom reward hook for open-instruct's existing verifier classes.
+"""Bridge MILES rollout samples to Open Instruct's registered verifier classes.
+Each sample's named targets and weights determine a combined reward, while the
+trusted registry controls which verifier implementations may be constructed. The
+bridge attaches diagnostics and isolates supported math verifiers in worker
+processes so a hung grading call can time out without blocking generation forever.
 
 ``core.reward_config`` points to a trusted JSON mapping of verifier names to
 ``{"factory": "package.Class", "config": {...}}``. Samples carry only names,

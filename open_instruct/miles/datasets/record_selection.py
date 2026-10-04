@@ -1,4 +1,8 @@
-"""Build and apply frozen prompt-exclusion tables from inference records.
+"""Build and apply frozen prompt-exclusion tables from accumulated inference records.
+The tables let later runs avoid prompts whose observed rewards consistently carry
+no within-group training signal, while retaining the evidence and policy scope
+behind each decision. Selection is applied by the data source rather than rewriting
+the prepared dataset, which keeps the underlying input artifacts reproducible.
 
 ``python -m open_instruct.miles records select STORE --skip all_zero --output table.json``
 reads a record store and writes a table of prompts whose evidence shows a constant

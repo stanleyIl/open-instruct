@@ -1,4 +1,9 @@
-"""Explain requested throughput budgets without promising GPU fit or optimality."""
+"""Flag configuration choices that may limit training or generation throughput.
+The report compares requested token pools, context lengths, serving slots and
+collection sizes, and calls out costs such as diagnostics or frequent saves.
+Its warnings help users decide what to measure before scaling; they neither choose
+a training/inference GPU split nor predict model fit or achieved throughput.
+"""
 
 from open_instruct.miles.configuration import graph_config
 

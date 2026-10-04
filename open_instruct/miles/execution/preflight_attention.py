@@ -1,4 +1,8 @@
-"""Check Core's actual attention forward/backward before loading a large policy."""
+"""Exercise the selected Core attention backend before loading the training policy.
+A small GPU forward/backward comparison checks that the installed kernels work and
+agree with a reference within tolerance. Running this at startup exposes backend
+or runtime incompatibilities before spending time initializing a large model.
+"""
 
 import argparse
 import json

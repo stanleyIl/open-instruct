@@ -1,8 +1,9 @@
-"""Standalone olmo-eval worker and manual W&B publisher.
-
-The submitter transports this file into a pinned evaluator image. That image must
-contain /opt/olmo-eval at the requested revision, olmo-eval, W&B, and the qualified
-SGLang/olmo-sglang runtime. No training imports or credentials are transported.
+"""Run olmo-eval tasks for a submitted policy snapshot and publish their metrics.
+The submitter copies this standalone worker into the pinned evaluator image, where
+it validates output provenance, reuses completed task results after a restart and
+isolates partial attempts. It invokes the installed evaluator and qualified serving
+runtime without importing the training application, and can retry W&B publication
+from saved results.
 """
 
 import argparse

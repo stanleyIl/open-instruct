@@ -1,4 +1,9 @@
-"""Analyze completed training runs and account for warmup, queues and unused work."""
+"""Explain measured throughput from a completed run's retained artifacts.
+The analyzer checks optimizer and rollout accounting, separates warmup from the
+measurement window, and reports time spent waiting, training and publishing along
+with discarded or unused generation work. This helps compare configurations using
+useful completed work rather than a generation-rate number alone.
+"""
 
 import argparse
 import json

@@ -1,7 +1,8 @@
-"""Best-effort evaluation planning and single-coordinator Beaker submission.
-
-This module is CPU-only. Snapshot collectives live in the actor; nothing here
-owns rollout engines, checkpoint retention, retries, or evaluator lifetimes.
+"""Plan evaluation milestones and submit ready policy snapshots to Beaker in the
+background. A single coordinator claims milestone receipts and gives submission a
+bounded window, allowing the training driver to continue while separate evaluator
+jobs run. Busy submissions are recorded as skipped under the best-effort policy;
+snapshot creation belongs to the trainer and evaluator execution to the worker.
 """
 
 import argparse

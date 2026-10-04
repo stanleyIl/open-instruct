@@ -1,4 +1,9 @@
-"""One isolated Beaker API attempt; the coordinator enforces a process deadline."""
+"""Create one background-evaluation experiment in an isolated Beaker API process.
+The coordinator invokes this worker with a rendered specification and a deadline,
+so an unresponsive submission cannot block training indefinitely. It returns the
+experiment ID on success or a bounded diagnostic with environment credentials
+redacted on failure; its own alarm remains active if the caller exits.
+"""
 
 import json
 import os

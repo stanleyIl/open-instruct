@@ -1,4 +1,8 @@
-"""Materialize runtime sources at their pinned Git commits.
+"""Materialize the runtime lock's source repositories at their exact Git commits.
+Image builds use these checkouts to install the selected MILES, Core and serving
+implementations, with optional local Git caches to reuse existing objects. The
+script prepares sources only; it neither installs packages nor modifies the cache
+repositories supplied by the caller.
 
 Use --cache NAME=/existing/repo to reproduce from a local Git object cache.
 No packages are installed or existing checkouts modified.

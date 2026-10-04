@@ -1,7 +1,8 @@
-"""CPU-safe researcher run specifications around the MILES/Core runtime facade.
-
-The section names follow the Megatron implementation. Preparation, launch and export are explicit
-workflow stages; this module only validates and compiles their desired state.
+"""Turn a researcher-facing run file into a complete plan for the MILES workflow.
+RunSpec validates model, data, training, serving, judge and launch settings, resolves
+paths and overrides, and translates the sections into lower-level MILES/Core options.
+It describes preparation, GPU allocation and output locations without executing
+those stages, so the CLI can plan and review a run before reserving compute.
 """
 
 import copy

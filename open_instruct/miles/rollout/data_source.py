@@ -11,7 +11,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""MILES data-source adapter with a durable dashboard shutdown boundary."""
+"""Adapt the MILES buffered data source for prompt selection and recoverable runs.
+The wrapper skips prompts named in a frozen exclusion table and tracks outstanding
+prompt groups alongside the dataset cursor, so retries and resumes regenerate
+unconsumed work rather than losing it or reusing partial responses. It also waits
+for dashboard telemetry to drain before the rollout actor shuts down.
+"""
 
 from __future__ import annotations
 

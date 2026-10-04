@@ -11,7 +11,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Open-Instruct-compatible external code-execution rewards."""
+"""Score generated Python programs through an external code-execution service.
+The adapter extracts the submitted code, sends its tests to the service and turns
+pass results into the existing Open Instruct reward, including the optional runtime
+penalty. Bounded HTTP retries and per-response diagnostics distinguish failed tests
+from service failures, with zero reward or an exception according to the configured
+failure policy.
+"""
 
 from __future__ import annotations
 

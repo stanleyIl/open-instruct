@@ -1,6 +1,8 @@
-"""Audit ownership and overlap from retained engine-drain and driver timelines.
+"""Audit independent engine publication using retained engine-drain and driver timelines.
+The report follows prompt ownership, decode versions, drain/update events and
+training overlap to expose protocol violations or idle time. It provides evidence
+about the observed run rather than a learning-quality or restart guarantee.
 
-This reports observed protocol evidence, not a learning or restart certificate.
 Pass the directory containing engine_drain.jsonl and driver_timing.jsonl.
 """
 

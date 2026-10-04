@@ -1,7 +1,8 @@
-"""Audit native -> streaming HF and HF -> Core -> streaming HF on CPU.
-
-Reads source checkpoints without modifying them or loading optimizer moments.
-This checks architecture/weight interchange, not forward or cached-generation parity.
+"""Validate weight interchange between native Core MoE checkpoints and HF exports.
+The audit constructs the corresponding CPU model, streams converted tensors and
+compares them with the expected source weights, recording architecture and equality
+evidence. It reads source checkpoints without modifying them or loading optimizer
+moments; forward execution and cached-generation parity need separate checks.
 """
 
 import argparse

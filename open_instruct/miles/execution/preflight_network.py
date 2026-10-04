@@ -1,4 +1,9 @@
-"""Check socket interface overrides before starting the container's workload."""
+"""Validate explicit network-interface selection inside the job container before
+starting distributed processes. An unavailable NCCL socket override can otherwise
+cause confusing initialization failures. This check permits automatic selection
+for the supported single-node bridge-network fallback and rejects invalid settings
+where distributed startup requires a working interface.
+"""
 
 import argparse
 import os

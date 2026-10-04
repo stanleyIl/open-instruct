@@ -1,4 +1,9 @@
-"""Infrastructure waits for CPU-only launch, judge and evaluation processes."""
+"""Make slow infrastructure operations visible and enforce explicit wait deadlines.
+The helpers log elapsed time around synchronous work and asynchronous requests,
+and cancel awaited work when its configured timeout expires. They are shared by
+launch, judge and evaluation processes so an external service stall has useful
+context even when no GPU training code is loaded.
+"""
 
 import asyncio
 import contextlib

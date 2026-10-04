@@ -1,8 +1,8 @@
-"""Own a replicated Ray cluster and fixed-weight judges for one committed run.
-
-Each replica attempt receives a fresh coordination directory on shared WEKA. No Beaker
-credential reaches training. Beaker propagates failure/preemption; heartbeats
-also bound peer failures and startup hangs from inside the allocation.
+"""Manage the Ray cluster and fixed-weight judge services inside a Beaker allocation.
+Each replica joins a fresh attempt directory on shared WEKA, starts its assigned
+processes and reports readiness, completion or failure to its peers. Supervision
+and heartbeats bound startup hangs and peer failures alongside Beaker's propagation
+settings, while the leader runs the training workflow without Beaker credentials.
 """
 
 import argparse

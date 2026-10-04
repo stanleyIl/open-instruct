@@ -1,4 +1,9 @@
-"""Read-only NVML sampling for topology qualification; no CUDA context is created."""
+"""Collect GPU utilization and memory observations alongside a qualification run.
+The sampler uses NVML without creating a CUDA context and records timestamps and
+device identity for later comparison with driver and rollout timelines. These
+measurements help explain idle capacity and startup costs without participating in
+the training workload.
+"""
 
 import argparse
 import csv

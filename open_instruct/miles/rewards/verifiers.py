@@ -1,4 +1,9 @@
-"""Verifier variants selected by MILES datasets without changing legacy scoring."""
+"""Define the GSM8K reward variant selected by MILES dataset preparation.
+It extracts the response's final number and compares numeric labels as exact decimal
+values, so equivalent formatting such as 18 and 18.00 receives the same reward.
+Keeping this verifier separate preserves the behavior of legacy scoring callers
+while allowing the prepared MILES reward registry to select it explicitly.
+"""
 
 import re
 from decimal import Decimal, InvalidOperation

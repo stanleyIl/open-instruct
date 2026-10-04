@@ -1,4 +1,9 @@
-"""Deterministic GPU ownership before Ray starts; judges never enter its GPU pool."""
+"""Assign the requested trainer, rollout and judge GPUs to concrete replica roles.
+The planner keeps each inference engine on one node and reserves managed-judge GPUs
+outside Ray's policy pool, then maps the layout to replica addresses and visible
+devices. This gives launch and startup the same deterministic ownership plan before
+Ray starts; it does not choose the workload's GPU counts for the user.
+"""
 
 import ipaddress
 from typing import Any

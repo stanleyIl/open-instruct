@@ -13,7 +13,12 @@
 
 # ruff: noqa: E501
 
-"""Judge rewards ported from the Megatron implementation."""
+"""Obtain rubric-based rewards from an OpenAI-compatible language-model judge.
+This module builds the shared judge prompts, checks the request's context budget,
+submits bounded requests and parses the returned verdict or numeric score. It
+records response and failure evidence on each sample so training can distinguish
+a low grade from an unavailable service or an unreadable judge reply.
+"""
 
 from __future__ import annotations
 

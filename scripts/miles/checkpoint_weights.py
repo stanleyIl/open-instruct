@@ -1,4 +1,9 @@
-"""Exact, bounded-memory checks for a stream of converted checkpoint tensors."""
+"""Compare converted checkpoint tensors exactly while keeping host memory bounded.
+The helper reads safetensors through a mapping interface and checks a supplied
+stream for names, shapes and byte equality after explicitly recorded dtype
+conversion, with digests for retained evidence. Conversion checks validate exports without
+materializing both complete checkpoints in memory.
+"""
 
 import hashlib
 import json

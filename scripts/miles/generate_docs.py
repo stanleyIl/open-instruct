@@ -1,4 +1,9 @@
-"""Generate MILES references at build time; the compact schema needs no GPU runtime."""
+"""Generate MILES configuration and native-option references from their source schemas.
+The documentation build uses these tables to keep defaults, descriptions and
+constraints aligned with the checked-in configuration code and parser snapshot.
+Generation runs without the GPU runtime so normal CPU documentation builds can
+include the complete reference.
+"""
 
 import argparse
 import ast

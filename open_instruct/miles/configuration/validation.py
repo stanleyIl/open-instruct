@@ -1,4 +1,9 @@
-"""Small, CPU-only input checks shared by the run file and Python API."""
+"""Provide common input checks for run files and the lower-level Python API.
+These helpers reject invalid types, unknown fields, malformed overrides and
+unsupported capacity settings with actionable InputError messages. Keeping them
+CPU-only lets planning and submission catch configuration mistakes before loading
+the training runtime.
+"""
 
 import difflib
 import json

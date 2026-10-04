@@ -1,4 +1,10 @@
-"""Run with python -m open_instruct.miles {plan,validate,train,run,status} CONFIG.toml.
+"""Expose the MILES workflow and inference-record tools through one command-line entry
+point. The CLI loads run files and overrides for planning, validation, local
+execution, Beaker submission and status queries, or dispatches record analysis and
+prompt-selection commands. Runtime imports are deferred to the commands that need
+them so planning remains available without the GPU stack.
+
+Run with python -m open_instruct.miles {plan,validate,train,run,status} CONFIG.toml.
 
 Inference-record tools use their own arguments:
 python -m open_instruct.miles records summarize STORE --output DIR

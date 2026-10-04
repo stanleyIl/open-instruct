@@ -1,4 +1,9 @@
-"""CPU-safe sizing and diagnostics for the existing FIFO async pipeline."""
+"""Describe the work that an asynchronous rollout pipeline is configured to hold.
+The report relates serving slots, prompt groups, completed-buffer capacity and
+policy lag so users can spot settings that leave engines idle or retain stale
+responses. A separate helper sizes the default producer budget in whole groups;
+these calculations use requested limits, not model speed or GPU-memory estimates.
+"""
 
 import math
 

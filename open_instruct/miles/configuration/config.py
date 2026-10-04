@@ -1,4 +1,9 @@
-"""CPU-safe configuration compilation for the MILES runtime."""
+"""Compile low-level MILES and Core configuration into a runnable argument list.
+The dataclasses validate supported combinations and attach the Open Instruct
+reward, recording and data-source hooks that the runtime needs. Their plan output
+also explains requested capacities and potential bottlenecks, allowing configuration
+review without loading the GPU training stack.
+"""
 
 import dataclasses
 import json

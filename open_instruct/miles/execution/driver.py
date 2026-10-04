@@ -1,4 +1,9 @@
-"""MILES orchestration with explicit Core publication and checkpoint boundaries."""
+"""Coordinate rollout collection, Core optimizer updates and policy publication for
+one training attempt. The driver connects MILES actors to Open Instruct rewards,
+records and evaluation, and places checkpoint and shutdown boundaries around work
+that must be recoverable. It supports barrier, refresh and engine-drain publication
+while leaving model execution and weight transport to the pinned runtime.
+"""
 
 import os
 import time

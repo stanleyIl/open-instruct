@@ -1,4 +1,8 @@
-"""Answer extraction shared by verifier workers and training utilities."""
+"""Extract the final answer from a model response for shared reward scoring. This
+keeps the answer-selection rules in one standard-library-only module so verifier
+workers can use the same parsing as the existing training utilities without
+importing their training dependencies.
+"""
 
 import re
 
